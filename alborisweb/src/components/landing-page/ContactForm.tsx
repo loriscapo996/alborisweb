@@ -16,7 +16,7 @@ const formSchema = z.object({
   company: z.string().min(2, { message: "Inserisci il nome dell'azienda." }),
   email: z.string().email({ message: "Inserisci un indirizzo email valido." }),
   phone: z.string().optional(),
-  requestType: z.string({ required_error: "Seleziona una richiesta." }),
+  requestType: z.string().min(1, { message: "Seleziona una richiesta." }),
   message: z.string().min(10, { message: "Il messaggio deve avere almeno 10 caratteri." }),
 });
 
